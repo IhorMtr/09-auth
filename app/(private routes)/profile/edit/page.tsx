@@ -4,7 +4,7 @@ import css from './EditProfilePage.module.css';
 import { useAuthStore } from '@/lib/store/authStore';
 import { useRouter } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
-import { changeUser } from '@/lib/clientApi';
+import { changeUser } from '@/lib/api/clientApi';
 import toast from 'react-hot-toast';
 
 export default function Edit() {
