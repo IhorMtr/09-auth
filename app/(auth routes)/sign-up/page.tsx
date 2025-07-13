@@ -1,7 +1,7 @@
 'use client';
 import { useMutation } from '@tanstack/react-query';
 import css from './SignUpPage.module.css';
-import { register } from '@/lib/clientApi';
+import { register } from '@/lib/api/clientApi';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/lib/store/authStore';

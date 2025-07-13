@@ -1,8 +1,7 @@
-// import { fetchNotes } from '@/lib/clientApi';
 import type { Response } from '@/types/response';
 import Notes from './Notes.client';
 import type { Metadata } from 'next';
-import { fetchServerNotes } from '@/lib/serverApi';
+import { fetchServerNotes } from '@/lib/api/serverApi';
 
 type Props = {
   params: Promise<{ slug: string[] }>;

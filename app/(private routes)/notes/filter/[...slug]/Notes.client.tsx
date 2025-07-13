@@ -2,7 +2,7 @@
 import css from './NotesPage.module.css';
 import { useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { fetchNotes } from '@/lib/clientApi';
+import { fetchNotes } from '@/lib/api/clientApi';
 import { Toaster } from 'react-hot-toast';
 import { useDebounce } from 'use-debounce';
 import NoteList from '@/components/NoteList/NoteList';

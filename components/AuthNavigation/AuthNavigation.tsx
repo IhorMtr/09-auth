@@ -3,7 +3,7 @@ import Link from 'next/link';
 import css from './AuthNavigation.module.css';
 import { useAuthStore } from '@/lib/store/authStore';
 import { useMutation } from '@tanstack/react-query';
-import { logOut } from '@/lib/clientApi';
+import { logOut } from '@/lib/api/clientApi';
 import { useRouter } from 'next/navigation';
 export default function AuthNavigation() {
   const user = useAuthStore(state => state.user);

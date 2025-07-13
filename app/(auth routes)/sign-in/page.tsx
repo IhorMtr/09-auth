@@ -3,7 +3,7 @@ import { useState } from 'react';
 import css from './SignInPage.module.css';
 import { useRouter } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
-import { signIn } from '@/lib/clientApi';
+import { signIn } from '@/lib/api/clientApi';
 import { AxiosError } from 'axios';
 import { useAuthStore } from '@/lib/store/authStore';
 
