@@ -3,12 +3,12 @@ import css from './CreateNote.module.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'NoteHub — Create a New Note',
+  title: 'Create a New Note — NoteHub',
   description: 'Create a new note and organize your thoughts efficiently.',
   openGraph: {
     type: 'website',
-    url: 'https://08-zustand-one.vercel.app/notes/action/create',
-    title: 'NoteHub — Create a New Note',
+    url: 'https://09-auth-sigma.vercel.app/notes/action/create',
+    title: 'Create a New Note — NoteHub',
     description: 'Use this page to create and categorize a new note.',
     siteName: 'NoteHub',
     images: [

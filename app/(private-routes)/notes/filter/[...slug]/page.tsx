@@ -1,7 +1,8 @@
-import { fetchNotes } from '@/lib/api';
+// import { fetchNotes } from '@/lib/clientApi';
 import type { Response } from '@/types/response';
 import Notes from './Notes.client';
 import type { Metadata } from 'next';
+import { fetchServerNotes } from '@/lib/serverApi';
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `Browse notes in the "${normalizedTag?.toLowerCase()} category`,
     openGraph: {
       type: 'website',
-      url: `https://08-zustand-one.vercel.app/filter/${normalizedTag}`,
+      url: `https://09-auth-sigma.vercel.app/filter/${normalizedTag}`,
       title: `NoteHub | ${normalizedTag?.toLowerCase()} category`,
       description: `Browse notes in the ${normalizedTag?.toLowerCase()} category`,
       siteName: 'NoteHub',
@@ -35,7 +36,7 @@ export default async function Page({ params }: Props) {
   const tag = slug[0];
   const normalizedTag = tag === 'All' ? undefined : tag;
 
-  const data: Response = await fetchNotes('', 1, normalizedTag);
+  const data: Response = await fetchServerNotes('', 1, normalizedTag);
 
   return <Notes initialData={data} tag={tag} />;
 }

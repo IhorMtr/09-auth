@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
+import AuthProvider from '@/components/AuthProvider/AuthProvider';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'NoteHub is a simple and powerful app for creating personal notes. Capture ideas, organize thoughts, and keep everything in one place, anytime, anywhere.',
   openGraph: {
     type: 'website',
-    url: 'https://08-zustand-one.vercel.app',
+    url: 'https://09-auth-sigma.vercel.app',
     title: 'NoteHub — Personal Note-Taking App',
     description:
       'NoteHub is a simple and reliable app for creating and storing personal notes. Keep your thoughts organized and accessible anytime.',
@@ -40,12 +41,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <TanStackProvider>
-          <Header />
-          <main>
-            {children}
-            {modal}
-          </main>
-          <Footer />
+          <AuthProvider>
+            <Header />
+            <main>
+              {children}
+              {modal}
+            </main>
+            <Footer />
+          </AuthProvider>
         </TanStackProvider>
       </body>
     </html>

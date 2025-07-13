@@ -1,2 +1,24 @@
-type Tag = 'Todo' | 'Work' | 'Personal' | 'Meeting' | 'Shopping';
-export const tags: Tag[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
+type Tag =
+  | 'Work'
+  | 'Personal'
+  | 'Meeting'
+  | 'Shopping'
+  | 'Ideas'
+  | 'Travel'
+  | 'Finance'
+  | 'Health'
+  | 'Important'
+  | 'Todo';
+
+export const tags: Tag[] = [
+  'Work',
+  'Personal',
+  'Meeting',
+  'Shopping',
+  'Ideas',
+  'Travel',
+  'Finance',
+  'Health',
+  'Important',
+  'Todo',
+];
