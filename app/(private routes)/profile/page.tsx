@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
-import ProfileClient from './ProfileClient';
+import Image from 'next/image';
+import css from './ProfilePage.module.css';
+import Link from 'next/link';
+import { getServerUser } from '@/lib/api/serverApi';
 
 export const metadata: Metadata = {
   title: 'Your Profile — NoteHub',
@@ -20,6 +23,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Profile() {
-  return <ProfileClient />;
+export default async function Profile() {
+  const user = await getServerUser();
+
+  return (
+    <div className={css.mainContent}>
+      <div className={css.profileCard}>
+        <div className={css.header}>
+          <h1 className={css.formTitle}>Profile Page</h1>
+          <Link href="/profile/edit" className={css.editProfileButton}>
+            Edit Profile
+          </Link>
+        </div>
+        {user.avatar && (
+          <div className={css.avatarWrapper}>
+            <Image
+              src={user.avatar}
+              alt="User Avatar"
+              width={120}
+              height={120}
+              className={css.avatar}
+            />
+          </div>
+        )}
+        <div className={css.profileInfo}>
+          <p>Username: {user.username}</p>
+          <p>Email: {user.email}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
